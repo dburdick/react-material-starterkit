@@ -1,8 +1,8 @@
 {
   "name": "webkid-react-starterkit",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "authors": [
-    "@moklick <mo@webkid.io>"
+    "@dburdick"
   ],
   "description": "Lightweight starting point for a react web app.",
   "main": "index.html",
