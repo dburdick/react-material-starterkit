@@ -15,7 +15,7 @@
     "start": "gulp",
     "test": "jest"
   },
-  "author": "@moklick <mo@webkid.io>",
+  "author": "@dburdick",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^4.7.0",
