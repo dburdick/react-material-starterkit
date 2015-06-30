@@ -4,36 +4,36 @@ var mui = require('material-ui'),
     FloatingActionButton = mui.FloatingActionButton;
 
 class ItemList extends React.Component {
-  
-  constructor(){
-    super();
-  }
 
-  onSliderChange(e, value) {
-    console.log(value);
-  }
+    constructor() {
+        super();
+    }
 
-  render() {
-    var items = this.props.items.map(item => <li key={ item }>{ item }</li>),
-      loading = this.props.loading ? <div className="loading-label">Loading...</div> : '';
+    onSliderChange(e, value) {
+        console.log(value);
+    }
 
-    return (
-      <div>
+    render() {
+        var items = this.props.items.map(item => <li key={ item }>{ item }</li>),
+            loading = this.props.loading ? <div className="loading-label">Loading...</div> : '';
+
+        return (
+            <div>
         { loading }
-        <ul>
+                <ul>
           { items }
-        </ul>
-        <Slider name="slider2" min={1} max={250} onChange={this.onSliderChange} defaultValue={0.5} />
-        <FloatingActionButton iconClassName="muidocs-icon-action-grade" />
-      </div>
-    );
-  }
-                                     
+                </ul>
+                <Slider name="slider2" min={1} max={250} onChange={this.onSliderChange} defaultValue={0.5} />
+                <FloatingActionButton iconClassName="muidocs-icon-action-grade" />
+            </div>
+        );
+    }
+
 }
 
 ItemList.propTypes = {
-  loading : React.PropTypes.bool,
-  items : React.PropTypes.array
-}
+    loading: React.PropTypes.bool,
+    items: React.PropTypes.array
+};
 
 export default ItemList;

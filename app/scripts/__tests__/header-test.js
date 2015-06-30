@@ -10,19 +10,19 @@ var StubRouterContext = require('../../../test-utils/stubRouterContext.jsx');
 
 var TestUtils = React.addons.TestUtils;
 
-describe('header', function() {
+describe('header', function () {
 
-  it('displays two nav items with right text content', function() {
+    it('displays two nav items with right text content', function () {
 
-    var HeaderWithRouterContext = StubRouterContext(Header),
-      header = TestUtils.renderIntoDocument(<HeaderWithRouterContext />);
-      renderedItems = TestUtils.scryRenderedDOMComponentsWithTag(header, 'a'),
-      itemCount = renderedItems.length;
+        var HeaderWithRouterContext = StubRouterContext(Header),
+            header = TestUtils.renderIntoDocument(<HeaderWithRouterContext />),
+            renderedItems = TestUtils.scryRenderedDOMComponentsWithTag(header, 'a'),
+            itemCount = renderedItems.length;
 
-    expect(itemCount).toBe(2);
+        expect(itemCount).toBe(2);
 
-    expect(React.findDOMNode(renderedItems[0]).textContent).toEqual('Home');
-    expect(React.findDOMNode(renderedItems[1]).textContent).toEqual('Info');
-  });
+        expect(React.findDOMNode(renderedItems[0]).textContent).toEqual('Home');
+        expect(React.findDOMNode(renderedItems[1]).textContent).toEqual('Info');
+    });
 
 });

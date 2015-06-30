@@ -4,37 +4,37 @@ import ItemStore from '../stores/itemStore';
 import ItemActions from '../actions/itemActions';
 
 class Home extends React.Component {
-  
-  constructor(props){
-    super(props);
-    this.state = {
-      items : [],
-      loading: false
-    };
-  }
 
-  componentDidMount() {
-    this.unsubscribe = ItemStore.listen(this.onStatusChange.bind(this));
-    ItemActions.loadItems();
-  }
+    constructor(props) {
+        super(props);
+        this.state = {
+            items: [],
+            loading: false
+        };
+    }
 
-  componentWillUnmount() {
-    this.unsubscribe();
-  }
+    componentDidMount() {
+        this.unsubscribe = ItemStore.listen(this.onStatusChange.bind(this));
+        ItemActions.loadItems();
+    }
 
-  onStatusChange(state) {
-    this.setState(state);
-  }
+    componentWillUnmount() {
+        this.unsubscribe();
+    }
 
-  render() {
+    onStatusChange(state) {
+        this.setState(state);
+    }
 
-    return (
-      <div>
-        <h1>Home Area</h1>
-        <ItemList { ...this.state } />
-      </div>
-    );
-  }
+    render() {
+
+        return (
+            <div>
+                <h1>Home Area</h1>
+                <ItemList { ...this.state } />
+            </div>
+        );
+    }
 }
 
 export default Home;
