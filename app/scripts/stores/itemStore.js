@@ -5,10 +5,12 @@ var ItemStore = Reflux.createStore({
 
     init() {
         this.items = [];
+        this.showDetailItem = null;
 
         this.listenTo(ItemActions.loadItems, this.loadItems);
         this.listenTo(ItemActions.loadItemsSuccess, this.loadItemsSuccess);
         this.listenTo(ItemActions.loadItemsError, this.loadItemsError);
+        this.listenTo(ItemActions.showItemDetail, this.showItemDetail);
     },
 
     loadItems() {
@@ -30,6 +32,13 @@ var ItemStore = Reflux.createStore({
         this.trigger({
             error: error,
             loading: false
+        });
+    },
+
+    showItemDetail(item) {
+        this.showDetailItem = item;
+        this.trigger({
+            showDetailItem: this.showDetailItem
         });
     }
 

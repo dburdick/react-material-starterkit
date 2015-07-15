@@ -30,7 +30,7 @@ class Home extends React.Component {
 
         return (
             <div>
-                <h1>Home Area</h1>
+                <h1>Movies</h1>
                 <ItemList { ...this.state } />
             </div>
         );

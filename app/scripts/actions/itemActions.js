@@ -1,21 +1,24 @@
 import Reflux from 'reflux';
 
+
 var ItemActions = Reflux.createActions([
     'loadItems',
     'loadItemsSuccess',
-    'loadItemsError'
+    'loadItemsError',
+    'showItemDetail'
 ]);
 
 ItemActions.loadItems.preEmit = function (data) {
-    // make your api call/ async stuff here
-    // we use setTimeout for faking async behaviour here
-    setTimeout(function () {
-        var items = ['Foo', 'Bar', 'Lorem'];
-        ItemActions.loadItemsSuccess(items);
-
-        // on error
-        // ItemActions.loadItemsError('an error occured');
-    }, 1500);
+    // fetch call example
+    let url = 'https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json';
+    fetch(url)
+        .then(function(response) {
+            return response.json()
+        }).then(function(json) {
+            ItemActions.loadItemsSuccess(json.movies)
+        }).catch(function(ex) {
+            ItemActions.loadItemsError(ex)
+        })
 };
 
 export default ItemActions;

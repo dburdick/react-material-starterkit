@@ -2,7 +2,6 @@ import React from 'react';
 import Router from 'react-router';
 import routes from './routes';
 
-
 //Needed for onTouchTap
 //Can go away when react 1.0 release
 //Check this repo:

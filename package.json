@@ -40,13 +40,14 @@
     "object-assign": "^2.0.0",
     "react-tools": "^0.13.1",
     "webpack": "^1.7.3",
-    "browserify": "^7.0.3"
+    "browserify": "^7.0.3",
+    "whatwg-fetch": "^0.9.0"
   },
   "dependencies": {
-    "react": "^0.13.1",
+    "react": "^0.13.3",
     "react-router": "^0.13.2",
     "reflux": "^0.2.7",
-    "material-ui": "^0.7.5"
+    "material-ui": "^0.10.1"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
