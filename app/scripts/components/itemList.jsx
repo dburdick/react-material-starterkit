@@ -55,7 +55,7 @@ class ItemList extends React.Component {
 
 ItemList.contextTypes = {
     muiTheme: React.PropTypes.object
-}
+};
 
 var styles = {
     demoCardSquare: {
