@@ -29,17 +29,22 @@ var ItemStore = Reflux.createStore({
     },
 
     loadItemsError(error) {
+        let msg = error && error.message ? error.message : 'An error occurred.';
         this.trigger({
-            error: error,
+            error: msg,
             loading: false
         });
     },
 
     showItemDetail(item) {
-        this.showDetailItem = item;
-        this.trigger({
-            showDetailItem: this.showDetailItem
-        });
+        if(this.showDetailItem === item){
+            console.log("Same item already detailed");
+        } else {
+            this.showDetailItem = item;
+            this.trigger({
+                showDetailItem: this.showDetailItem
+            });
+        }
     }
 
 });

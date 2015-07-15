@@ -9,6 +9,10 @@ class ItemList extends React.Component {
     }
 
     render() {
+        var error = '';
+        if(this.props.error)
+            error = (<h4>{this.props.error}</h4>);
+
         var detail = '';
         if(this.props.showDetailItem)
             detail = (<h3>Show detail: {this.props.showDetailItem.title}</h3>);
@@ -44,6 +48,7 @@ class ItemList extends React.Component {
 
         return (
             <div>
+                { error }
                 { detail }
                 { loading }
                 { items }
@@ -67,7 +72,9 @@ var styles = {
 
 ItemList.propTypes = {
     loading: React.PropTypes.bool,
-    items: React.PropTypes.array
+    items: React.PropTypes.array,
+    error: React.PropTypes.string,
+    showDetailItem: React.PropTypes.object
 };
 
 export default ItemList;
